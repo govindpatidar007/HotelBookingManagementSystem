@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MODELS.Models.Room>
+@using MODELS
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ROOMS</h1>
+@if (TempData["Message"] != null)
+{
+    <partial name="_alerts" />
+
+}
+
+<p>
+   @* <a asp-action="Create">Create New</a>*@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RoomNo)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Hotel.HotelName)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType.RoomTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RatePerNight)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Availability)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.RoomNo)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Hotel.HotelName)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType.RoomTypes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RatePerNight)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Availability)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RoomNo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RoomNo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RoomNo })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="nav-link " asp-area="" asp-controller="Hotels" asp-action="Index">List of Hotels</a>

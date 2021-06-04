@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MODELS.Models.City>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cities List</h1>
+
+@if (TempData["Message"] != null)
+{
+    <partial name="_alerts" />
+
+}
+
+
+<p>
+    <a asp-action="Create">Create New City</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CityId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CityId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CityId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CityId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CityId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index" asp-controller="Hotels">List of Hotels</a>

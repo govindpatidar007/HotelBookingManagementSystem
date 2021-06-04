@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HBMS.Models.models.BookingDetail>
+
+@{
+    ViewData["Title"] = "HotelBookings";
+}
+
+<h1>HotelBookings</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookedFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookedTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildrenNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdultNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookedFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookedTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildrenNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdultNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.RoomNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BookingId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BookingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-action="  Index" asp-controller="Hotels">Back to list of Hotels</a>

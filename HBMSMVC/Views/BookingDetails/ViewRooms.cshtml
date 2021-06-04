@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MODELS.Models.Room>
+
+@{
+    ViewData["Title"] = "ViewRooms";
+}
+
+<h1>RoomTypes</h1>
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                    @Html.DisplayNameFor(model => model.RoomNo)
+                </th>
+
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Hotel.HotelName)
+                </th>*@
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType.RoomTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RatePerNight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                        @Html.DisplayFor(modelItem => item.RoomNo)
+                    </td>
+
+
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Hotel.HotelName)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomType.RoomTypes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RatePerNight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>*@
+            <td>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+                {
+                    @Html.ActionLink("Book Room", "Create", new { id = item.RoomNo })
+                } 
+               @* @Html.ActionLink("Details", "RoomDetails", new { id = item.RoomNo })|*@
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.RoomNo })|
+                @Html.ActionLink("Edit", "Edit", new { id = item.RoomNo })|
+                <a asp-action="Create" asp-controller="Rooms">Add Rooms</a>|*@
+
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+
+    <a asp-action="FindHotels" asp-controller="BookingDetails">List of Hotels</a>
+</div>

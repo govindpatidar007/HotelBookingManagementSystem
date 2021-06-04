@@ -1,0 +1,118 @@
+﻿@model IEnumerable<MODELS.Models.Hotel>
+
+@{
+    ViewData["Title"] = "FindHotels";
+}
+
+<h1>List of Hotels</h1>
+<p>
+
+    <a asp-action="FindHotels">All Hotels</a>|
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+    {
+        <a asp-action="Index">All Bookings</a>
+    }
+    </p>
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FindHotels">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Search By CityName, HotelName or Email</label>
+                <input type="text" name="criteria" required class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (ViewData["criteria"] != null)
+{
+
+    <span>Search criteria:@ViewData["criteria"]</span>
+}
+@if (Model.Count() == 0)
+{
+    <br />
+    <span> No Hotel found</span>
+
+}
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.HotelId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.City.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvgRatePerNight)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.HotelId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.City.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgRatePerNight)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("View Rooms", "ViewRooms", new { id = item.HotelId }) |
+                    @Html.ActionLink("Details", "HotelDetails", new { id = item.HotelId })
+                    @* @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

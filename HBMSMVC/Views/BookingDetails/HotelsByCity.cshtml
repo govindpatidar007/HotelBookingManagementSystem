@@ -1,0 +1,106 @@
+﻿
+@model IEnumerable<MODELS.Models.Hotel>
+
+@using MODELS.Models
+@{
+    ViewData["Title"] = "HotelsByCity";
+}
+
+
+<h1>Search Hotels By City</h1>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="HotelsByCity">
+            <div class="form-group">
+                <label class="control-label">City</label>
+                <select name="cityId" class="form-control"
+                        required asp-items="ViewBag.City">
+                    <option selected="selected" value=""></option>
+                </select>
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@if (Model != null && Model.Count() > 0)
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.HotelId)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.City.CityName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AvgRatePerNight)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.HotelId)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City.CityName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AvgRatePerNight)
+                    </td>
+                    @*<td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}
+
+else if (Model != null && Model.Count() == 0)
+{
+    <span> No hotels found for this City</span>
+}

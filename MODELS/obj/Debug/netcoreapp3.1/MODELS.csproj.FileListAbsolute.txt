@@ -1,0 +1,12 @@
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\bin\Debug\netcoreapp3.1\MODELS.deps.json
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\bin\Debug\netcoreapp3.1\MODELS.runtimeconfig.json
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\bin\Debug\netcoreapp3.1\MODELS.runtimeconfig.dev.json
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\bin\Debug\netcoreapp3.1\MODELS.dll
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\bin\Debug\netcoreapp3.1\MODELS.pdb
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.AssemblyInfoInputs.cache
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.AssemblyInfo.cs
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.csproj.CoreCompileInputs.cache
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.dll
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.pdb
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.genruntimeconfig.cache
+H:\DOTNET Training\LabsASP.NET\MODELS\MODELS\obj\Debug\netcoreapp3.1\MODELS.csprojAssemblyReference.cache

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MODELS.Models.RoomType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Room Types</h1>
+@if (TempData["Message"] != null)
+{
+    <partial name="_alerts" />
+
+}
+
+<p>
+    <a asp-action="Create">Create New RoomType</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.RoomTypeId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RoomTypes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.RoomTypeId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomTypes)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RoomTypeId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RoomTypeId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RoomTypeId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index" asp-controller="Hotels">List of Hotels</a>

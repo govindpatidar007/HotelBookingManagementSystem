@@ -1,0 +1,132 @@
+﻿@model IEnumerable<MODELS.Models.Hotel>
+@using MODELS
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hotels List</h1>
+@if (TempData["Message"] != null)
+{
+    <partial name="_alerts" />
+
+}
+
+<p>
+    <a asp-action="Create">Create New Hotel</a> |
+    <a asp-action="Index">All Hotels</a> |
+    <a asp-action="Create" asp-controller="Rooms">Create NewRoom</a>|
+    <a asp-action="Index" asp-controller="Cities">Create NewCity</a>|
+    <a asp-action="Index" asp-controller="RoomTypes">Create New RoomCategory</a>
+
+
+
+
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Search By CityName, HotelName or Email</label>
+                <input type="text" name="criteria" required class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@if (ViewData["criteria"] != null)
+{
+
+    <span>Search criteria:@ViewData["criteria"]</span>
+}
+@if (Model.Count() == 0)
+{
+    <br />
+    <span> No Hotel found</span>
+
+}
+
+
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.HotelId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.City.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HotelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvgRatePerNight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.HotelId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.City.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HotelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvgRatePerNight)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.HotelId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.HotelId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.HotelId })|
+                    @Html.ActionLink("Bookings", "SpecificHotelBookings", new { id = item.HotelId })|
+
+                    @*<a class="nav-link " asp-area="" asp-controller="Rooms" asp-action="Index">Add Rooms</a>*@
+                    <a class="nav-link " asp-area="" asp-controller="Rooms" asp-action="Index">View Rooms</a>
+                  @*  <a class="nav-link " asp-area="" asp-controller="Employees" asp-action="Index">Employees</a>*@
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

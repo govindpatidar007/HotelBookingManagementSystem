@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MODELS", "MODELS\MODELS.csproj", "{E6C52FE3-EC70-45B5-B356-838F4FC9C291}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBMSWEBAPI", "HBMSWEBAPI\HBMSWEBAPI.csproj", "{C6FBE57D-81BA-4776-A3A5-7168DF791C49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBMSMVC", "HBMSMVC\HBMSMVC.csproj", "{24E3DC59-5850-4FF3-AF24-D5F7F82D70C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6C52FE3-EC70-45B5-B356-838F4FC9C291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C52FE3-EC70-45B5-B356-838F4FC9C291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C52FE3-EC70-45B5-B356-838F4FC9C291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C52FE3-EC70-45B5-B356-838F4FC9C291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FBE57D-81BA-4776-A3A5-7168DF791C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FBE57D-81BA-4776-A3A5-7168DF791C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FBE57D-81BA-4776-A3A5-7168DF791C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FBE57D-81BA-4776-A3A5-7168DF791C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E3DC59-5850-4FF3-AF24-D5F7F82D70C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E3DC59-5850-4FF3-AF24-D5F7F82D70C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E3DC59-5850-4FF3-AF24-D5F7F82D70C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E3DC59-5850-4FF3-AF24-D5F7F82D70C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08C2030A-1C62-4B9F-B457-9F437F1745D7}
+	EndGlobalSection
+EndGlobal
